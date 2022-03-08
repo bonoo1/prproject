@@ -106,7 +106,7 @@ def user(userid):
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
         status = (userid == payload["id"])
 
-        user_info = db.feelingusers.find_one({"userid": userid}, {"_id": False})
+        user_info = db.feelingusers.find_one({"rid": userid}, {"_id": False})
         return render_template('user.html', user_info=user_info, status=status)
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("home"))
