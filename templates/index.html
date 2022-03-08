@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"></script>
+
+<title>Feeling</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&family=Titan+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&family=Single+Day&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+
+* {padding:0;margin:0;}
+input[id="menuicon"] {display:none;}
+input[id="menuicon"] + ul {display:block;position:fixed;right:0;top:4.5%;transform:translateY(-50%);transition:all .35s;text-align:right;}
+input[id="menuicon"] + ul > li {display:block;width:50px;height:50px;border:0px solid #f1f1f1;position:relative;margin-top:-1px;}
+input[id="menuicon"] + ul > li > a {display:block;width:auto;height:50px;overflow:hidden;transition:all .35s;}
+input[id="menuicon"] + ul > li > label {display:block;cursor:pointer;width:auto;height:50px;background:white;}
+input[id="menuicon"] + ul > li:nth-child(1) label span {display:block;position:absolute;width:50%;height:3px;border-radius:30px;background:#333;transition:all .35s;}
+input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(1) {top:30%;left:50%;transform:translateX(-50%);}
+input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(2) {top:50%;left:50%;transform:translate(-50%,-50%);}
+input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(3) {bottom:30%;left:50%;transform:translateX(-50%);}
+input[id="menuicon"] + ul > li:nth-child(3) a .icon {background:url('./img/sand-clock.png') center center no-repeat;background-size:50%;display:inline-block;width:50px;height:50px;vertical-align:middle;}
+input[id="menuicon"]:checked + ul {z-index:2;right:300px;}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label {z-index:2;right:300px;}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(1) {top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(2) {opacity:0;}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(3) {bottom:50%;left:50%;transform:translate(-50%,50%) rotate(-45deg);}
+div[class="sidebar"] {width:300px;height:100%;background:#f5f5f5;position:fixed;top:0;right:-300px;z-index:1;transition:all .35s;}
+input[id="menuicon"]:checked + ul + div {right:0;}
+
+    .logo {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Titan One', cursive;
+        color: #707070;
+        font-style: italic;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding:20px;
+        margin: 10x 20px 20px 0px;
+        text-shadow: 4px 4px 0px #999999, 8px 8px 0px #bfbfbf;
+    }
+
+
+
+    .warp {
+        margin: 100px;
+
+    }
+
+    .menu_btn {
+      background-color: transparent;
+      width: 300px;
+      padding: 10px;
+      margin-top: 53px;
+      outline: 0px;
+      border: 0px;
+    }
+
+    .menu_btn:hover {
+      background-color: white;
+    }
+
+    .menu_btn2 {
+      background-color: transparent;
+      width: 300px;
+      padding: 10px;
+      margin-top: 10px;
+      outline: 0px;
+      border: 0px;
+
+    }
+
+    .menu_btn2:hover {
+      background-color: white;
+    }
+
+    .nav1 {
+      margin-top:0px;
+      z-index: 0;
+      width: 100%;
+      padding:17px;
+      background-color: white;
+      position: fixed;
+
+
+    }
+
+    .col {
+      z-index: -1;
+      margin-top: 10px;
+    }
+
+    .bb {
+      margin-top: -400px;
+    }
+
+    .h1 {
+      margin-top: -320px;
+      margin-left: 250px;
+      color: white;
+      font-size: 30px;
+      font-family: 'Single Day', cursive;
+
+
+    }
+
+    .fel {
+      margin-left: 240px;
+      color: white;
+
+      font-family: 'Titan One', cursive;
+    }
+
+    .today {
+      margin-top: 200px;
+      margin-left: 560px;
+      font-family: 'Dongle', sans-serif;
+      color: #73edf2;
+      font-size: 40px;
+    }
+
+    .people {
+      margin-left: 450px;
+      font-family: 'Dongle', sans-serif;
+
+    }
+
+    .sun {
+      opacity: 0.2;
+    }
+
+    .btn btn-info {
+      margin-left: 1000px;
+    }
+    html,body {
+      overflow-x: hidden;
+    }
+
+    .card-footer {
+      background-color: white;
+    }
+</style>
+</head>
+
+<body>
+
+
+
+<nav class="nav1">
+  <div class="container-fluid">
+<a href="http://localhost:63342/bucket/templates/index.html?_ijt=i6dj4b2e0kiritligc1jmg07cj&_ij_reload=RELOAD_ON_SAVE" onclick="window.location.reload()">
+    <img src="../static/logo.png" width="110"/>
+</a>
+  </div>
+
+</nav>
+<div>
+  <img src="../static/sky.jpeg" class="bb"/>
+  <h1 class="h1">오늘의 기분을 음악으로</h1>
+  <h1 class="fel" style="font-size: 100px;">Feeling</h1>
+  <h1 class="today">오늘의 기분은?(멘트 추천 받아요 ㅠㅠ)</h1>
+  <h1 class="people"style="font-size: 50px;">사람들의 기분들(좋은 멘트 추천해주세요 ㅠㅠ)</h1>
+</div>
+<hr style="width: 85%; margin-left: 110px; margin-top: 50px;" class="sun">
+
+<div>
+<button type="button" class="btn btn-info" style="margin-left: 1260px; margin-top:10px; border-radius: 20px; color: white;">POST!!</button>
+</div>
+<input type="checkbox" id="menuicon">
+<ul>
+	<li>
+		<label for="menuicon">
+			<span></span><span></span><span></span>
+		</label>
+	</li>
+
+
+</ul>
+
+<div class="sidebar">
+  <button class="menu_btn">로그인</button>
+  <button class="menu_btn2">회원가입</button>
+</div>
+
+<!--    <h1 class="logo" style="font-size: 100px">Feeling</h1>-->
+<!--    <hr>-->
+<div class="warp">
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Y0fpGPzf_voHgSOKOBbd2xE8nFstBmWBBQ&usqp=CAU class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">노래제목</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Y0fpGPzf_voHgSOKOBbd2xE8nFstBmWBBQ&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">노래제목</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Y0fpGPzf_voHgSOKOBbd2xE8nFstBmWBBQ&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">노래제목</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Y0fpGPzf_voHgSOKOBbd2xE8nFstBmWBBQ&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">노래제목</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Y0fpGPzf_voHgSOKOBbd2xE8nFstBmWBBQ&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">노래제목</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Y0fpGPzf_voHgSOKOBbd2xE8nFstBmWBBQ&usqp=CAU" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">노래제목</small>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
